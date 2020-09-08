@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/static/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+
+      .edit {
+        color: blue;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .edit:hover {
+        cursor: pointer;
+        color: #00a86b;
+      }
+
+      .delete {
+        color: red;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .delete:hover {
+        cursor: pointer;
+        color: orange;
+      }
+
+      .icon {
+        color: yellow;
+      }
+    </style>
+    <title>Ganneo | Forum</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-primary mb-3">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="fab fa-maxcdn icon"></i><b class="icon">icroposts</b></a
+        >
+      </div>
+    </nav>
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <h1 class="card-title">Say Something</h1>
+          <p>What's on your mind?</p>
+          <div class="alert fade show d-none" id="alert-div">
+            <span id="alert-message"></span>
+            <button class="close" id="alert-hide">&times;</button>
+          </div>
+          <form>
+            <div class="form-group">
+              <input
+                type="text"
+                name="post-heading"
+                id="post-heading"
+                placeholder="Post Heading"
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                name="post-body"
+                id="post-body"
+                cols="30"
+                rows="3"
+                placeholder="What do you want to say?"
+                class="form-control"
+              ></textarea>
+            </div>
+            <button class="btn-block btn btn-primary" id="post-it-btn">
+              <i class="fas fa-plus-circle"></i> Post It
+            </button>
+            <button
+              class="btn-block btn btn-warning"
+              id="update-btn"
+              data-id=""
+            >
+              <i class="fas fa-pencil-alt"></i> Update
+            </button>
+            <button class="btn-block btn btn-light" id="back-btn">
+              <i class="fas fa-arrow-left"></i> Back
+            </button>
+          </form>
+        </div>
+      </div>
+      <div id="posts">
+        <div class="card mt-3" id="post-template" style="display: none">
+          <div class="card-body">
+            <h3 class="card-title"></h3>
+            <div class="card-text">
+              <h5></h5>
+              <i class="fas fa-pen edit"></i> &nbsp; &nbsp;
+              <i class="fas fa-trash-alt delete"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./build/app.bundle.js"></script>
+  </body>
+</html>

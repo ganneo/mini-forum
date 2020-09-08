@@ -1,0 +1,34 @@
+{
+  "name": "mini-forum",
+  "version": "1.0.0",
+  "description": "Forum",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --output-public-path=/build/  --mode development --progress --open --hot",
+    "build": "webpack --mode development --progress",
+    "json-server": "json-server --watch ./db/posts.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ganneo/mini-forum.git"
+  },
+  "author": "Neo Gan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ganneo/mini-forum/issues"
+  },
+  "homepage": "https://github.com/ganneo/mini-forum#readme",
+  "dependencies": {
+    "json-server": "^0.16.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "@babel/polyfill": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.10"
+  }
+}
