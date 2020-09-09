@@ -1,8 +1,8 @@
 import Post from "../model/Post";
 
 export const successAlertType = "alert fade show d-block alert-success mt-3";
+export const dangerAlertType = "alert fade show d-block alert-danger mt-3";
 
-const dangerAlertType = "alert fade show d-block alert-danger mt-3";
 const hideAlertType = "alert fade show d-none";
 
 export default class UI {

@@ -10,7 +10,7 @@ export default class EasyHttp {
   }
 
   async post(data) {
-    fetch(this.url, {
+    await fetch(this.url, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -20,7 +20,7 @@ export default class EasyHttp {
   }
 
   async deleteById(id) {
-    fetch(`${this.url}/${id}`, {
+    await fetch(`${this.url}/${id}`, {
       method: "DELETE",
     });
   }

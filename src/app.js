@@ -1,4 +1,4 @@
-import UI, { successAlertType } from "./ui/UI";
+import UI, { successAlertType, dangerAlertType } from "./ui/UI";
 import EasyHttp from "./lib/EasyHttp";
 
 const ui = new UI(document);
@@ -34,6 +34,8 @@ ui.postArea.addEventListener("click", async (e) => {
     const posts = await postsEndPoint.getAll();
     ui.showAllPosts(posts);
     ui.showAlert("Post Deleted", successAlertType);
+    ui.clearInput();
+    ui.changeToPostState();
   }
 });
 
@@ -58,9 +60,17 @@ ui.updateBtn.addEventListener("click", async (e) => {
   const postId = parseInt(ui.updateBtn.dataset.id);
 
   const postItem = ui.createPost();
+  if (!postItem) {
+    const originPost = await postsEndPoint.getById(postId);
+    ui.fillInput(originPost);
+    ui.showAlert("Please fill in all inputs!", dangerAlertType);
+    return;
+  }
+
   await postsEndPoint.update(postItem, postId);
   const postArr = await postsEndPoint.getAll();
   ui.showAllPosts(postArr);
   ui.clearInput();
   ui.changeToPostState();
+  ui.showAlert("Post updated!", successAlertType);
 });
